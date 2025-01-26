@@ -1,0 +1,355 @@
+@import url("fonts.css");
+
+:root {
+  --green-200: #dff1e7;
+  --green-600: #0c7d69;
+  --green-900: #043930;
+  --red: #d73c3c;
+  --grey-500: #87a3a6;
+  --grey-900: #2b4246;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--green-200);
+  font-size: 1rem;
+  font-family: "Karla-Regular", sans-serif;
+  overflow-y: scroll; /* Vertical scroll */
+  overflow-x: hidden; /* Optionally hide horizontal scrollbar */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  /* height: 100%; */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile version */
+
+.container {
+  background-color: var(--white);
+  margin: 25px 15px;
+  padding: 1.25rem;
+  /* height: 100vh; */
+  border-radius: 15px;
+  font-family: "Karla-Regular", sans-serif;
+}
+
+.container__heading {
+  font-size: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.contact-form__label {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.contact-form__input:is(:active, :focus) {
+  border: 1px solid var(--green-600);
+}
+
+.contact-form__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.contact-form__required {
+  color: var(--green-600);
+  margin-left: 5px;
+}
+
+.contact-form__consent-required {
+  margin-left: initial;
+}
+
+.contact-form__enquiry,
+.contact-form__request {
+  border: 1px solid var(--grey-500);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.contact-form__enquiry {
+  margin: 0 0 10px 0;
+}
+
+.contact-form__input {
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey-500);
+  padding: 1.25rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form__input[type="radio"] {
+  display: none;
+}
+
+.contact-form__custom-radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.contact-form__radiomark {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid var(--grey-500);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-form__input[type="radio"]:checked + .contact-form__radiomark {
+  border-color: #0c7d69;
+  background-image: url("./assets/images/icon-radio-selected.svg");
+}
+
+.contact-form__input[type="checkbox"] {
+  display: none;
+}
+
+.contact-form__custom-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-form__checkmark {
+  width: 18px;
+  height: 16px;
+  background-color: white;
+  border: 1px solid var(--grey-500);
+  border-radius: 0px;
+  display: inline-block;
+  margin-right: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-form__input[type="checkbox"]:checked + .contact-form__checkmark {
+  /* background-color: #0c7d69; */
+  border-color: #0c7d69;
+  background-image: url("./assets/images/icon-checkbox-check.svg");
+}
+
+.contact-form__consent {
+  display: inline-block;
+  padding: 1.5rem 0;
+}
+
+.contact-form__custom-text {
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.contact-form__text {
+  height: 230px;
+  resize: none;
+}
+
+/* Submit Button */
+
+.contact-form__button {
+  background-color: var(--green-600);
+  outline: none;
+  border: none;
+  color: var(--white);
+  font-family: inherit;
+  padding: 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Error Message */
+
+.contact-form--error {
+  color: var(--red);
+  margin-top: 15px;
+  font-size: 0.85rem;
+}
+
+.contact-form--error__hidden {
+  display: none;
+}
+
+/* Success Toast */
+.contact-form__success-content {
+  position: absolute;
+  top: -2%;
+  right: 0;
+  background-color: var(--grey-900);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.contact-form__success-heading {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Karla-Bold", sans-serif;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.contact-form__success-checkmark {
+  display: inline-block;
+  width: 20px;
+  /* or another size */
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("./assets/images/icon-success-check.svg");
+}
+
+.contact-form__success-text {
+  color: var(--grey-500);
+  font-family: "Karla-Bold" sans-serif;
+}
+
+.contact-form__success--hidden {
+  display: none;
+}
+
+/* Animation keyframes for sliding down and then sliding up */
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+    visibility: visible;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0); /* Slide down to original position */
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0); /* Stay at the original position */
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px); /* Slide up and vanish */
+    visibility: hidden;
+  }
+}
+
+/* When toast is visible */
+.contact-form__success--visible {
+  animation: slideInOut 5s ease forwards; /* Apply the keyframe animation */
+}
+
+/* Desktop version */
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 750px;
+    margin: 7em auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-form__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact-form__content {
+    flex: 0 0 49%;
+  }
+
+  .contact-form__input:is(:hover, :active, :focus) {
+    border: 1px solid var(--green-600);
+    cursor: pointer;
+  }
+
+  .contact-form__enquiry,
+  .contact-form__request {
+    flex: 0 0 49%;
+    margin: 0;
+  }
+
+  .contact-form__enquiry,
+  .contact-form__request {
+    flex: 0 0 49%;
+    margin: 0;
+  }
+
+  .contact-form__custom-checkbox {
+    justify-content: flex-start;
+  }
+
+  .contact-form__text {
+    height: 125px;
+  }
+
+  .contact-form__checkmark {
+    width: 16px;
+  }
+
+  .contact-form__button:hover {
+    background-color: var(--green-900);
+  }
+
+  .contact-form__checkmark:hover {
+    cursor: pointer;
+  }
+
+  .contact-form__enquiry:focus-visible,
+  .contact-form__request:focus-visible,
+  .contact-form__checkmark:focus-visible {
+    outline: none;
+    box-shadow: 0 0 5px var(--green-600);
+  }
+
+  .contact-form__consent {
+    margin-bottom: 20px;
+  }
+
+  .contact-form__success-content {
+    position: absolute;
+    right: 34%;
+    background-color: var(--grey-900);
+    color: var(--white);
+    padding: 1.25rem;
+    margin: 1.5em;
+  }
+
+  .contact-form__success-heading {
+    margin-bottom: 15px;
+  }
+}

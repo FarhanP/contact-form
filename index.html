@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet"> -->
+  <link rel="stylesheet" href="styles.css">
+
+
+  <title>Frontend Mentor | Contact form</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="container__heading">Contact Us</h1>
+
+    <!-- Contact us form -->
+    <form id="form" class="contact-form" novalidate>
+
+      <div class="contact-form__row">
+
+        <!-- First Name -->
+        <div class="contact-form__content">
+          <label for="contact-form__firstname" aria-label="First Name" class="contact-form__label">First Name
+            <span class="contact-form__required">*</span>
+          </label>
+          <input type="text" id="contact-form__firstname" class="contact-form__input" />
+          <p class="contact-form__firstname--error contact-form--error contact-form--error__hidden">This field is
+            required</p>
+        </div>
+
+
+        <!-- Last Name -->
+        <div class="contact-form__content">
+          <label for="contact-form__lastname" aria-label="Last Name" class="contact-form__label">Last Name
+            <span class="contact-form__required">*</span>
+          </label>
+          <input type="text" id="contact-form__lastname" class="contact-form__input" />
+          <p class="contact-form__lastname--error contact-form--error contact-form--error__hidden">This field is
+            required</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-form__content">
+        <label for="contact-form__email" aria-label="Email" class="contact-form__label">Email Address
+          <span class="contact-form__required">*</span>
+        </label>
+        <input type="email" id="contact-form__email" class="contact-form__input" />
+        <p class="contact-form__email--error contact-form--error contact-form--error__hidden">Please enter a valid email
+          address</p>
+      </div>
+
+      <!-- Query Type -->
+      <div class="contact-form__content">
+        <label for="quertype" aria-label="Query Type" class="contact-form__label">Query type
+          <span class="contact-form__required">*</span>
+        </label>
+
+        <div class="contact-form__row contact-form__radio-wrapper">
+          <div class="contact-form__enquiry contact-form__radio" tabindex="0">
+            <label class="contact-form__custom-radio" for="contact-form__enquiryRadio" aria-label="General Enquiry">
+              <input class="contact-form__input" id="contact-form__enquiryRadio" value="General Enquiry" name="enquiry"
+                type="radio">
+              <span class="contact-form__radiomark"></span>
+              <span class="contact-form__custom-radio">
+                General Enquiry
+              </span>
+            </label>
+          </div>
+          <div class="contact-form__request contact-form__radio" tabindex="0">
+            <label class="contact-form__custom-radio" for="contact-form__requestRadio" aria-label="Support Request">
+              <input class="contact-form__input" id="contact-form__requestRadio" value="Support Request" name="enquiry"
+                type="radio">
+              <span class="contact-form__radiomark"></span>
+              <span class="contact-form__custom-radio">
+                Support Request
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="contact-form__radio--error contact-form--error contact-form--error__hidden">Please select a query type
+        </p>
+      </div>
+
+      <!-- Message -->
+      <div class="contact-form__content">
+        <label for="message" aria-label="Message" class="contact-form__label">Message
+          <span class="contact-form__required">*</span>
+        </label>
+        <textarea name="contact-form__message" class="contact-form__input contact-form__text"
+          id="contact-form__message"></textarea>
+        <p class="contact-form__message--error contact-form--error contact-form--error__hidden">This field is required
+        </p>
+      </div>
+
+      <!-- Consent -->
+      <div class="contact-form__content contact-form__consent">
+        <label class="contact-form__custom-checkbox" for="contact-form__checkbox" aria-label="Consent checkmark">
+          <input type="checkbox" id="contact-form__checkbox" class="contact-form__input">
+          <span tabindex="0" class="contact-form__checkmark"></span>
+          <span class="contact-form__custom-text">I consent to being contacted by the team <span
+              class="contact-form__required contact-form__consent-required">*</span></span>
+        </label>
+        <p class="contact-form__consent--error contact-form--error contact-form--error__hidden">To submit this form,
+          please consent to being contacted</p>
+      </div>
+
+      <button type="submit" class="contact-form__button">Submit</button>
+    </form>
+
+
+    <!-- Success Toast -->
+    <div class="contact-form__success">
+      <div class="contact-form__success-content contact-form__success--hidden">
+        <h3 class="contact-form__success-heading">
+          <span class="contact-form__success-checkmark"></span>Message Sent!
+        </h3>
+        <p class="contact-form__success-text">Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
